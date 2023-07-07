@@ -22,11 +22,23 @@ void bubbleSort(int arr[], int n, int swaps[]) {
                 swap(&arr[j], &arr[j+1]);
 
                 // Increment swap count for the indices involved in the swap
-                swaps[j]++;
-                swaps[j+1]++;
+//                swaps[j]++;
+//                swaps[j+1]++;
+                swaps[i]++;
             }
         }
     }
+}
+
+void printArray(int numbers[], int sz)
+{
+    int i;
+    printf("Number array : ");
+    for (i = 0;i<sz;++i)
+    {
+        printf("%d ",numbers[i]);
+    }
+    printf("\n");
 }
 int main() {
 
@@ -34,12 +46,15 @@ int main() {
     int n = 9;
     int swaps[n]; // Stores swaps done
 
+    printArray(arr,n);
+
     bubbleSort(arr, n, swaps);
 
     printf("Number of swaps for each index:\n");
     for (int i = 0; i < n; i++) {
         printf("Index %d: %d swaps\n", i, swaps[i]);
     }
+    printArray(arr,n);
     return 0;
 }
 
